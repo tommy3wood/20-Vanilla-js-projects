@@ -9,9 +9,11 @@ let ticketPrice = +movieSelect.value;
 //save selected movie index & price
 function setMovieData(movieIndex, moviePrice) {
     console.log(moviePrice, movieIndex)
-    // localStorage.setItem("selectedMovieIndex", movieIndex);
-    // localStorage.setItem("selectedMoviePrice", moviePrice);
-};
+    localStorage.setItem("selectedMovieIndex", movieIndex);
+    localStorage.setItem("selectedMoviePrice", moviePrice);
+}
+
+
 
 //functions
 //updated total and count
