@@ -7,11 +7,9 @@ const calculateWealthBtn = document.getElementById('calculate-wealth');
 
 let data = [];
 
-console.log("butt hole");
-
-// getRandomUser();
-// getRandomUser();
-// getRandomUser();
+getRandomUser();
+getRandomUser();
+getRandomUser();
 
 
 //Fetch random user and add money
@@ -19,5 +17,18 @@ console.log("butt hole");
 async function getRandomUser() {
     const res = await fetch('https://randomuser.me/api');
     const data = await res.json();
-    console.log(data);
+
+    const user = data.results[0];
+
+    const newUser = {
+        name: `${user.name.first} ${user.name.last}`,
+        money: Math.floor(Math.random() * 1000000)
+    };
+
+    addData(newUser);
+}
+
+//Add bew obj to data arr
+function addData(obj) {
+    data.push(obj);
 }
